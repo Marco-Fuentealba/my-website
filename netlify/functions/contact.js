@@ -34,23 +34,23 @@ exports.handler = async (event) => {
       return {
         statusCode: 500,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ok: false, error: "Faltan variables de entorno (EMAIL_USER/EMAIL_PASS)." }),
+        body: JSON.stringify({
+          ok: false,
+          error: "Faltan variables de entorno (EMAIL_USER/EMAIL_PASS).",
+        }),
       };
     }
 
-    // Use SMTP (587 / STARTTLS) - usually the most compatible in hosted environments
-   const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
+    // Gmail SMTP (SSL)
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: EMAIL_USER,
+        pass: EMAIL_PASS,
+      },
+    });
 
     const subject = `Nuevo contacto: ${tipoProyecto || "Consulta"} - ${nombre}`;
 
