@@ -39,18 +39,18 @@ exports.handler = async (event) => {
     }
 
     // Use SMTP (587 / STARTTLS) - usually the most compatible in hosted environments
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: EMAIL_USER,
-        pass: EMAIL_PASS,
-      },
-      connectionTimeout: 15000,
-      greetingTimeout: 15000,
-      socketTimeout: 20000,
-    });
+   const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+});
+
 
     const subject = `Nuevo contacto: ${tipoProyecto || "Consulta"} - ${nombre}`;
 
