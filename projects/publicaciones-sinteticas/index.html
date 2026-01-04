@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo · Widget de publicaciones sintéticas</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Demo · Widget de publicaciones sintéticas</h1>
+      <p class="app-header__subtitle">
+        Versión de demostración solo frontend. Genera textos simulados sin conexión a la API.
+      </p>
+    </header>
+
+    <main class="widget">
+      <!-- Panel de configuración -->
+      <section class="widget-config">
+        <h2>Configuración de la publicación</h2>
+
+        <form id="postForm" class="form">
+          <div class="form-group">
+            <label for="topic">Tema o idea principal</label>
+            <input
+              type="text"
+              id="topic"
+              name="topic"
+              placeholder="Ej: Rutina de entrenamiento para principiantes"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Tono del texto</label>
+            <select id="tone" name="tone">
+              <option value="informal">Informal / cercano</option>
+              <option value="profesional">Profesional</option>
+              <option value="motivado">Motivador / inspiracional</option>
+              <option value="educativo">Educativo / explicativo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="length">Longitud del texto</label>
+            <select id="length" name="length">
+              <option value="corto">Corto (1–2 frases)</option>
+              <option value="medio" selected>Medio (1 párrafo)</option>
+              <option value="largo">Largo (2–3 párrafos)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="platform">Plataforma objetivo</label>
+            <select id="platform" name="platform">
+              <option value="generico">Genérico</option>
+              <option value="instagram">Instagram</option>
+              <option value="twitter">X / Twitter</option>
+              <option value="facebook">Facebook</option>
+              <option value="linkedin">LinkedIn</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hashtags">Hashtags (opcional)</label>
+            <input
+              type="text"
+              id="hashtags"
+              name="hashtags"
+              placeholder="#fitness #rutina #principiantes"
+            />
+          </div>
+
+          <button type="submit" class="btn-primary">
+            Generar publicación de demo
+          </button>
+        </form>
+
+        <p class="helper-text">
+          Esta versión no usa IA real. El texto se construye de forma simulada a partir de tus opciones.
+        </p>
+      </section>
+
+      <!-- Panel de resultado -->
+      <section class="widget-output">
+        <h2>Vista previa de la publicación</h2>
+
+        <div id="loader" class="loader hidden">
+          Generando publicación de demostración...
+        </div>
+
+        <article id="generatedPost" class="post-card empty">
+          <p class="placeholder">
+            Aquí verás el texto de ejemplo. Completa el formulario y haz clic en
+            <strong>“Generar publicación de demo”</strong>.
+          </p>
+        </article>
+
+        <button id="copyButton" class="btn-secondary" disabled>
+          Copiar texto
+        </button>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Demo solo frontend · HTML + CSS + JavaScript | Marco Fuentealba Vergara</p>
+    </footer>
+  </div>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

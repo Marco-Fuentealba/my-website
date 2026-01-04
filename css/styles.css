@@ -1,0 +1,524 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* ===== HERO SECTION ===== */
+
+#hero {
+  background: radial-gradient(circle at top left, #6366F1 0, #111827 45%, #020617 100%);
+  color: #F3F4F6;
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pequeña textura suave con pseudo-elementos */
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(165, 180, 252, 0.15) 0, transparent 50%),
+                    radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.18) 0, transparent 50%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+/* Para que el contenido esté encima del fondo decorativo */
+#hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Títulos y textos del hero */
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #E5E7EB;
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.hero-title span {
+  color: #A5B4FC;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  max-width: 32rem;
+  color: #E5E7EB;
+  opacity: 0.9;
+}
+
+/* Stats (como mini gráfico con porcentajes) */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.hero-stat {
+  min-width: 120px;
+}
+
+.hero-stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #A5B4FC;
+}
+
+.hero-stat-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #E5E7EB;
+  opacity: 0.85;
+}
+
+/* Zona mockup derecha */
+.hero-mockup-wrapper {
+  position: relative;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-mockup-card {
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+  overflow: hidden;
+}
+
+/* Pantalla principal */
+.hero-mockup-card.main {
+  padding: 0.9rem 1rem 1.2rem;
+}
+
+.hero-mockup-header {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-mockup-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #4B5563;
+}
+
+.hero-mockup-body {
+  padding: 0.2rem 0.1rem 0;
+}
+
+.hero-mockup-body.small {
+  padding: 0.7rem;
+}
+
+/* Líneas simulando texto */
+.hero-mockup-line {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4F46E5, #6366F1, #A5B4FC);
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.hero-mockup-line.short {
+  width: 55%;
+}
+
+/* Grid simulando tarjetas del portafolio */
+.hero-mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.hero-mockup-box {
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  background: radial-gradient(circle at top left, #6366F1, #111827);
+  opacity: 0.85;
+}
+
+/* Tarjeta secundaria */
+.hero-mockup-card.side {
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+  width: 55%;
+  transform: translateY(0);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* Indicador de scroll */
+.hero-scroll-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 1.5rem;
+  gap: 0.75rem;
+  align-items: center;
+  color: #E5E7EB;
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.hero-scroll-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, #A5B4FC, transparent);
+}
+
+/* Responsivo */
+@media (max-width: 991.98px) {
+  #hero {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-mockup-wrapper {
+    margin-top: 1.5rem;
+  }
+
+  .hero-mockup-card.side {
+    display: none;
+  }
+
+  .hero-scroll-indicator {
+    display: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .hero-stat-number {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1F2937;
+  background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', sans-serif;
+  color: #1F2937;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #6366F1;
+  border-color: #6366F1;
+}
+
+.btn-primary:hover {
+  background-color: #4F46E5;
+  border-color: #4F46E5;
+}
+
+.btn-outline-light:hover {
+  color: #111827;
+  background-color: #A5B4FC;
+  border-color: #A5B4FC;
+}
+
+.bg-light {
+  background-color: #F3F4F6 !important;
+}
+
+.project-thumb {
+  height: 180px;
+  border-radius: 8px;
+  background: #d1d5db;
+}
+
+.card-title {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+/* ===== PORTAFOLIO ===== */
+
+#portfolio {
+  background-color: #FFFFFF;
+}
+
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  background-color: #FFFFFF;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  border-color: rgba(99, 102, 241, 0.7);
+}
+
+/* Mini header visual del proyecto */
+.project-thumb {
+  position: relative;
+  height: 160px;
+  background: radial-gradient(circle at top left, #6366F1, #111827);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.5);
+}
+
+/* Variantes por tipo de proyecto */
+.project-thumb-alt {
+  background: radial-gradient(circle at top left, #22c55e, #14532d);
+}
+
+.project-thumb-node {
+  background: radial-gradient(circle at top left, #0ea5e9, #0f172a);
+}
+
+/* Tag arriba de la imagen */
+.project-tag {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: rgba(15, 23, 42, 0.85);
+  color: #E5E7EB;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Badges de tecnologías */
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-badge {
+  background-color: #EEF2FF;
+  color: #4F46E5;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
+/* Bloque de “gráfico” de tipos de proyecto */
+.portfolio-stats {
+  border-radius: 14px;
+  background-color: #F3F4F6;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.portfolio-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.portfolio-bar-label {
+  color: #4B5563;
+}
+
+.portfolio-bar {
+  width: 100%;
+  height: 18px;
+  border-radius: 999px;
+  background-color: #E5E7EB;
+  overflow: hidden;
+}
+
+.portfolio-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366F1, #A5B4FC);
+  color: #EEF2FF;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.4rem;
+}
+
+/* ===== SERVICIOS ===== */
+
+.services-section {
+  background-color: #F3F4F6; /* gris claro suave */
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(99, 102, 241, 0.15); /* sutil toque del color primario */
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 38px rgba(0,0,0,0.12);
+  border-color: #6366F1; /* resalta con tu color primario */
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #6366F1;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.service-text {
+  font-size: 0.95rem;
+  color: #4B5563;
+}
+
+/* ===== CONTACTO ===== */
+
+.contact-section {
+  background: linear-gradient(135deg, #EEF2FF 0%, #F9FAFB 100%);
+}
+
+.contact-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: #E0E7FF;
+  color: #4F46E5;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.contact-text {
+  font-size: 0.98rem;
+  color: #4B5563;
+  max-width: 26rem;
+}
+
+.contact-list {
+  margin-top: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  color: #6366F1;
+  margin-right: 0.6rem;
+}
+
+/* Tarjeta del formulario */
+.contact-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+}
+
+.contact-card h5 {
+  font-family: 'Poppins', sans-serif;
+  color: #111827;
+}
+
+.contact-card .form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.contact-card .form-control,
+.contact-card .form-select {
+  border-radius: 10px;
+  border-color: #D1D5DB;
+  font-size: 0.9rem;
+}
+
+.contact-card .form-control:focus,
+.contact-card .form-select:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 0.15rem rgba(99, 102, 241, 0.25);
+}
+
+/* Responsivo */
+@media (max-width: 767.98px) {
+  .contact-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* ===== NAVBAR ACTIVE LINK ===== */
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #6366F1; /* color primario */
+  font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #6366F1;
+}
+
+/* Margen de scroll para secciones por navbar fija */
+section {
+  scroll-margin-top: 80px;
+}

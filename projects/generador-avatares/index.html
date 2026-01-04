@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Avatares</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Generador de Avatares con IA</h1>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="container">
+
+        <!-- PANEL DE PREFERENCIAS -->
+        <section class="preferences">
+            <h2>Preferencias del Avatar</h2>
+
+            <label for="estilo">Estilo:</label>
+            <select id="estilo">
+                <option value="realista">Realista</option>
+                <option value="anime" selected>Anime</option>
+                <option value="pixel">Pixel Art</option>
+            </select>
+
+            <label for="color-fondo">Color de Fondo:</label>
+            <input type="color" id="color-fondo" value="#d9463f">
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" placeholder="Ej: hombre joven, cabello negro..."></textarea>
+
+            <button id="btn-generar">Generar Avatar</button>
+        </section>
+
+        <!-- PREVISUALIZACIÓN -->
+        <section class="preview">
+            <h2>Previsualización</h2>
+            <div id="imagen-container" class="image-box">
+                <p>Aquí aparecerá tu avatar de ejemplo</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Creado por Marco Fuentealba · Versión demo (sin conexión a API)</p>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
