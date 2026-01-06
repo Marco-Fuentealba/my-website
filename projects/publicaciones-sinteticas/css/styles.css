@@ -229,3 +229,14 @@ body {
     font-size: 1.4rem;
   }
 }
+
+
+/* === Fondo suave para sección Portafolio === */
+#portfolio {
+  background: linear-gradient(180deg, #f4f6fb 0%, #eef1f8 100%);
+  padding: 5rem 0;
+}
+
+body.dark #portfolio {
+  background: linear-gradient(180deg, #141a2e 0%, #0f1324 100%);
+}
